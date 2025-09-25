@@ -1,0 +1,10 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/shyim/devcontainers-features/php:latest": {
+			"version": "8.4"
+		}
+	},
+	"postCreateCommand": "npm ci && composer install --no-interaction && cp .env.example .env && touch database/database.sqlite && php artisan migrate --no-interaction --force && php artisan key:generate && npm run build"
+}
