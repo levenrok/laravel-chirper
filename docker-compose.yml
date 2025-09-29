@@ -1,0 +1,13 @@
+services:
+    app:
+        container_name: laravel-chirper
+        image: levenrok/laravel-chirper:latest
+        build:
+            context: .
+            target: production
+            args:
+                - APP_ENV=${APP_ENV}
+        environment:
+            - APP_ENV=${APP_ENV}
+        ports:
+            - 8080:8080
